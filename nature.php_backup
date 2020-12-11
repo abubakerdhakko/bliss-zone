@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bliss Zone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- <link rel="stylesheet" href="stylesheet.css"> -->
+    <link rel="stylesheet" href="./style_b.css">
+    <link rel="stylesheet" href="./plyr.css">
+    <link rel="stylesheet" href="./mystyle.css">
+
+    <style>
+        #rng {
+            margin: 0px 0 20px 0;
+            -webkit-appearance: none;
+            background-color: #f5f6f8;
+            height: 14px;
+            width: 100%;
+            margin: 10px auto;
+            border-radius: 15px;
+        }
+
+        #rng:focus {
+            outline: none;
+        }
+
+        .__range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-1.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-2.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee3::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-3.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee4::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-4.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee5::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-5.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee6::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-6.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .__rangee7::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 70px;
+            /* background: red; */
+            /* border-radius: 50%; */
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            /* 
+      height: 50px;
+      width: 50px;
+      border-radius: 3px; */
+            background-color: transparent;
+            background: url('./assets/crop-btn/btn-7.png') center center no-repeat;
+            /* cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -23px; */
+        }
+
+        .slider-ppt-3 {
+            padding-top: 1.6rem;
+        }
+
+        .no-slider-ppt {
+            padding-top: 2.7rem;
+        }
+
+        .color-white-icon {
+            color: #c3c5c8;
+            font-size: 40px;
+        }
+
+        .padding-icon {
+            /* padding-top: 10px; */
+        }
+
+        .padding-icon.center-icon {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .bg-footer {
+            padding: 10px 30px;
+            background-color: rgba(10, 10, 10, 0.23);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="load"></div>
+
+    <div class="bg-main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+            <a class="navbar-brand" href="index.php">
+                <img src="./assets/img/logo-bliss_zone.png" width="45" height="45" alt="">
+                <span class="font-logo">Bliss Zone</span> </a>
+
+
+            <div class="text-right fade-p mb-mt-1">
+                <div class="d-flex justify-content-start mt-2">
+                    <div class="">
+                        <div id="" class="mute_div">
+                            <span class="font-mute" id="muteButton">MUTE</span>
+                            <span class="font-mute" id="vol_up_Button">UNMUTE</span>
+                            <!-- <i class="fas fa-volume-mute" id="muteButton"> </i>
+                                        <i class="fas fa-volume-up" id="vol_up_Button"> </i> -->
+                        </div>
+                    </div>
+
+                    <!-- <p>master volume</p> -->
+                    <div class="">
+
+                    </div>
+                    <div class="pl-3 mstr">
+                        <input type="range" class="masterVolume" id="masterAudio" max="1" min="0" step="0.01" value="1" onchange="masterChangeVolume(this.value)" />
+                        <!-- <input type="range" class="masterVolume" id="z" max="1" min="0" step="0.01" /> -->
+                        <div id="audioSlider"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+
+
+
+                        <a class="navbar-brand" href="solfeggio_frequencies.php">
+                            <span>Solfeggio Frequencies</span>
+                        </a>
+
+                        <a class="navbar-brand" href="binaural_beats.php">
+                            <span>Binaural Beats</span>
+                        </a>
+
+                        <a class="navbar-brand" href="angel_frequencies.php">
+                            <span>Angel Frequencies</span>
+                        </a>
+
+                        <a class="navbar-brand" href="healing_frequencies.php">
+                            <span>Healing Frequencies</span>
+                        </a>
+
+                        <a class="navbar-brand" href="nature.php">
+                            <span>Nature Sounds</span>
+                        </a>
+
+                        <a class="navbar-brand" href="432hz_music.php">
+                            <span>432 Hz Music</span>
+                        </a>
+
+
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="Title">
+            <h1 class="font-logo">Bliss Zone</h1>
+            <!-- <p>Ambient sounds to wash away distraction.</p> -->
+        </div>
+
+        <div class="v-middle">
+            <!-- class="card-main "     -->
+            <div>
+                <div id="container ">
+
+
+                    <!-- <button onclick="getvvvolume()" type="button">What is the volume?</button> -->
+                    <div class="d-flex justify-content-between">
+                        <div class="vertical-center ">
+                            <div id="undo-trash" class="">
+                                <input type="hidden" id="revert">
+                                <i class="fas fa-undo revert  
+fa_font_revert_undo" onclick="create_revert();"></i>
+                                <i class="fas fa-trash trash 
+fa_font_revert_undo" onclick="create_trash()"></i>
+                            </div>
+                        </div>
+                        <div class="text-center m-btn-ply-pause ">
+                            <button id="stopButton" type="button" value="">
+                                <img src="./assets/play-pause-icon/pause.png">
+                                <!-- <i class="fas fa-pause ply-pause-d"></i> -->
+
+                            </button>
+                            <button id="playButton" type="button">
+                                <img src="./assets/play-pause-icon/play.png">
+                                <!-- <i class="fas fa-play ply-pause-d"></i> -->
+
+                            </button>
+                        </div>
+                        <div class="vertical-center ">
+                            <div id="start-stop" class="click-stop-stop">
+                                <img src="./assets/icons/life.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="players" id="player2-container">
+                        <div class="d-flex justify-content-center ">
+
+                            <!-- <div class=" fade-p">
+                                    <p>fade out sound</p>
+                                    <input name="1" id="fadeOutvvvolume" type="range" min="1000" max="7000" step="10"
+                                        value="0" oninput="sliderChangeFadeOut(this.value)">
+                                    <br />
+                                    <output id="outputFadeOut"></output>
+                                </div> -->
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center mb-4 mt-4">
+
+
+                                <!-- <button  class="shrd-btn" onclick="FadeIn();">audioVolumeOut
+                                        </button>
+                                         -->
+                                <!-- <button onclick="(new hit()).audioVolumeOut();" class="shrd-btn">audioVolumeOut
+                                        </button> -->
+                            </div>
+                            <div class="animated  fadeInLeft delay-4s">
+                                <div class="text-center">
+                                    <button id="start_stop">
+                                        <img src="./assets/icons/chronometer.png">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="animated  fadeInLeft delay-3s">
+                                <div class="text-center">
+                                    <button id="random_mix">
+                                        <img src="./assets/icons/random-button.png">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="animated  fadeInLeft delay-2s">
+                                <div class="text-center">
+                                    <button id="button_share">
+                                        <img src="./assets/icons/me.png">
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div id="shared-items">
+
+                            <div class="text-center mb-4 mt-4">
+                                <button onclick="(new hit()).create_url();" class="shrd-btn">Create
+                                    Mix</button>
+                            </div>
+                            <div class="text-center mt-3 mb-4">
+                                <p style="display: none;">Copy Mix: <span class="current_shared_url">
+                                    </span></p>
+                            </div>
+                            <div class=" ml-5 mr-5 mb-4 ">
+                                <div class="d-flex justify-content-center">
+                                    <p style="color: white;" class="pt-3  pr-3">Copy Mix: <span class="current_shared_url"></span>
+                                        </span></p>
+                                    <input type="text" id="current_shared_url">
+                                    <!-- The button used to copy the text -->
+                                    <button class="copy-mix-" onclick="copyFunction()">Copy text</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-4">
+                                    <div id="div1">
+                                        <div id="fb" onclick="(new hit()).share_linkdin();">
+                                            <img src="./assets/icons/linkedin.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="div2">
+                                        <div id="fb" onclick="(new hit()).share_fb();">
+                                            <img src="./assets/icons/facebook.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="div3">
+                                        <div id="fb" onclick="(new hit()).share_twitter();">
+                                            <img src="./assets/icons/twitter (1).png">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-right pt-3">
+                                <button class="btn close_btn" id="share-close">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="start_stop-items">
+
+                            <div class="">
+                                <div class="d-flex justify-content-between">
+                                    <div class="">
+                                        <div class="fade-p input-fade-p">
+
+                                            <input type="number" id="number" min="0" placeholder="Enter Time In Minutes " />
+                                            <button class="start-after" onclick="countdown()">Start After</button>
+                                            <!-- <div id="div_timer">1
+                                                </div> -->
+                                        </div>
+                                    </div>
+
+
+                                    <div class="">
+                                        <div class="fade-p input-fade-p ">
+                                            <!--<p>fade in sound</p>
+                <input name="1" id="fadeInVolume" type="range" min="1000" max="7000" step="10"
+                    value="0" oninput="sliderChange(this.value)">
+                <br />
+                <output id="output"></output> -->
+                                            <input type="number" id="number_stop" min="0" placeholder="Enter Time In Minutes" />
+                                            <button class=" start-after" onclick="countdown_stop()">Stop
+                                                After</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-right pt-3">
+                                <button class="btn close_btn" id="start_stop_counter">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                        <div id="random_mix_items">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="div1" class="box">
+                                        <Select id="Selector" onchange="myFunction()">
+                                            <option value="">Select option</option>
+                                            <option value="soothe">Soothing Down</option>
+                                            <option value="breezy">Breezy Evening</option>
+                                            <option value="tidal">Tidal Waves Rising</option>
+                                            <option value="ambient">Ambient Meditation</option>
+                                            <option value="stormy">Heavy Stormy Day</option>
+                                        </Select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="d-flex justify-content-center">
+                                    <div class="mt-3 mb-3">
+                                        <button onclick="showCreateMix()" class="btn_mix">Create
+                                            New Mix</button>
+                                    </div>
+                                </div> -->
+                            <div class="  mb-3 mt-3 input_create_mix">
+                                <div class="d-flex justify-content-center">
+                                    <!-- <p style="color: white;" class="pt-3  pr-3">Copy Mix: <span class="current_shared_url"></span>
+                                            </span></p> -->
+                                    <input type="hidden" id="current_shared_mix_hide">
+                                    <input type="text" id="current_shared_mix_name">
+                                    <!-- The button used to copy the text -->
+                                    <button class="copy-mix-" onclick="(new hit()).create_mix(),setLocalStorage()">save mix</button>
+                                </div>
+                            </div>
+                            <!-- <div class="d-flex justify-content-center ">
+
+                                    <a class="btn-show-a ml-3" onclick="getLocalStorage()">
+                                        Show Mix
+                                    </a>
+                                    <a class="btn-show-a ml-3" onclick="clearMix()">
+                                        Clear Mix
+                                    </a>
+                                </div> -->
+                            <div class="" id="data">
+
+                            </div>
+                            <div class="text-right pt-3">
+                                <button class="btn close_btn" id="close-random">
+                                    Close
+                                </button>
+                            </div>
+
+
+
+
+                        </div>
+
+
+                        <!-- Audio List starts here -->
+
+
+
+
+                        <div class="container" style="padding-left: 50px;">
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/fire.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__range" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/flash.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/dove.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee3" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/storm.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee4" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/coffee-cup.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee5" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/wave.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee6" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="audio-div ">
+                                    <!-- Image -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="./assets/icons/singing-bowl.png" class=" button red">
+                                        </div>
+                                        <div class="col-md-8 pl-0 slider-ppt-3">
+                                            <input class="__rangee7" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="0.01" onchange="updateTextInput(this.value);">
+                                        </div>
+
+                                        <!-- Text -->
+                                        <div class=" col-md-1  no-slider-ppt">
+                                            <h3 class="text-center">50</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="d-flex justify-content-center social">
+        <div class="">
+            <i class="social fab fa-facebook-square " aria-hidden="true"></i>
+        </div>
+        <div class="">
+            <i class="social fab fa-twitter" aria-hidden="true"></i>
+        </div>
+        <div class="">
+            <i class="social fab fa-youtube"></i>
+        </div>
+    </div> -->
+    </div>
+    <!-- Modal -->
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body pb-0">
+                    <div class="text-center pading">
+                        <p class="font-color pb-4">Play Mix or cancel to Make your own mix</p>
+                        <div class="row">
+                            <div class="col-md-6 p-0">
+                                <button type="button" class="btn-play ply-audio" data-dismiss="modal">play</button>
+                            </div>
+                            <div class="col-md-6  p-0">
+                                <button type="button" class="btn-cancel pause-audio" data-dismiss="modal">pause-audio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Lahit compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+
+    <script src="./script_a.js"></script>
+    <script src="./plyr.js"></script>
+    <!-- <script src="./myscript.js"></script> -->
+
+    <script>
+        document.querySelectorAll("#rng").forEach(function(el) {
+            el.oninput = function() {
+                var valPercent = (el.valueAsNumber - parseInt(el.min)) /
+                    (parseInt(el.max) - parseInt(el.min));
+                var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(' + valPercent + ', #5ed2f0), color-stop(' + valPercent + ', #7e8798));';
+                el.style = style;
+            };
+            el.oninput();
+        });
+    </script>
+</body>
+
+</html>

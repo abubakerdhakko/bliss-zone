@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="./nature.css">
+<link rel="stylesheet" href="./nature-player.css">
+<link rel="stylesheet" href="./nature-style.css">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+    <div class="slider-group">
+                    <div class="slider">
+                        <label for="volume-wave">Volume</label>
+                        <input type="range" min="0" max="1" step="0.01" value="0" id="volume-wave">
+                        <div class="slider-value">1</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="stop-wave" class="stop action"></button>
+                    <button id="play-wave" class="play action"></button>
+                </div>
+
+    <div class="slider-group">
+                    <div class="slider">
+                        <label for="volume-wave">Volume</label>
+                        <input type="range" min="0" max="1" step="0.01" value="0" id="volume-acoustic">
+                        <div class="slider-value">1</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="stop-acoustic" class="stop action"></button>
+                    <button id="play-acoustic" class="play action"></button>
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider">
+                        <label for="volume-wave">Volume</label>
+                        <input type="range" min="0" max="1" step="0.01" value="0" id="volume-orange">
+                        <div class="slider-value">1</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="stop-orange" class="stop action"></button>
+                    <button id="play-orange" class="play action"></button>
+                </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.min.js"></script>
+       <script src="https://supernaturalbp.com/apps/bliss/plyr.js"></script> 
+    <script  src="https://supernaturalbp.com/apps/bliss/myscript.js"></script>
+     <script type="text/javascript">
+ var sineWave = new Pizzicato.Sound({ 
+    source: 'wave', 
+    options: {
+        frequency: 440
+    }
+});
+// sineWave.play();
+
+   var red = new Pizzicato.Sound({
+    source: 'wave',
+    options: {
+      frequency: 256,
+    }
+  });
+
+   var orange = new Pizzicato.Sound({
+    source: 'wave',
+    options: {
+      frequency: 356,
+    }
+  });
+// red.play();
+
+
+
+      var segments = [
+  {
+    audio: sineWave,
+    playButton: document.getElementById('play-wave'),
+    stopButton: document.getElementById('stop-wave'),
+    volumeSlider: document.getElementById('volume-wave')
+  },
+  {
+    audio: red,
+    playButton: document.getElementById('play-acoustic'),
+    stopButton: document.getElementById('stop-acoustic'),
+    volumeSlider: document.getElementById('volume-acoustic')
+  },
+  {
+    audio: orange,
+    playButton: document.getElementById('play-orange'),
+    stopButton: document.getElementById('stop-orange'),
+    volumeSlider: document.getElementById('volume-orange')
+  }
+]
+
+for (var i = 0; i < segments.length; i++) {
+  (function(segment) {
+
+    segment.audio.on('play', function() {
+      segment.playButton.classList.add('pause');
+    });
+
+    segment.audio.on('stop', function() {
+      segment.playButton.classList.remove('pause');
+    });
+
+    segment.audio.on('pause', function() {
+      segment.playButton.classList.remove('pause');
+    });
+
+    segment.playButton.addEventListener('click', function(e) {
+      if (segment.playButton.classList.contains('pause'))
+        segment.audio.pause();
+      else
+        segment.audio.play();
+    });
+
+    segment.stopButton.addEventListener('click', function(e) {
+      segment.audio.stop();
+    });
+
+    segment.volumeSlider.addEventListener('input', function(e) {
+      var volumeDisplay = segment.volumeSlider.parentNode.getElementsByClassName('slider-value')[0];
+       console.log(volumeDisplay);
+      volumeDisplay.innerHTML = segment.audio.volume = e.target.valueAsNumber;
+    });
+
+    if (segment.releaseSlider) {
+      segment.releaseSlider.addEventListener('input', function(e) {
+        var releaseDisplay = segment.releaseSlider.parentNode.getElementsByClassName('slider-value')[0];
+        releaseDisplay.innerHTML = segment.audio.release = e.target.valueAsNumber;
+      });
+    }
+
+    if (segment.attackSlider) {
+      segment.attackSlider.addEventListener('input', function(e) {
+        var attackDisplay = segment.attackSlider.parentNode.getElementsByClassName('slider-value')[0];
+        attackDisplay.innerHTML = segment.audio.attack = e.target.valueAsNumber;
+      });
+    }
+
+    if (!segment.effects || !segment.effects.length)
+      return;
+
+    for (var i = 0; i < segment.effects.length; i++) {
+      var effect = segment.effects[i];
+
+      for (var key in effect.parameters) {
+        (function(key, slider, instance){
+
+          var display = slider.parentNode.getElementsByClassName('slider-value')[0];
+
+          slider.addEventListener('input', function(e) {
+            display.innerHTML = instance[key] = e.target.valueAsNumber;
+          });
+
+        })(key, effect.parameters[key], effect.instance); 
+      }
+    }
+
+  })(segments[i]);
+}
+
+    </script>
+  </body>
+</html>
